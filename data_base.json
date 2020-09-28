@@ -1,0 +1,43 @@
+{
+  "greeting": [
+    "hi",
+    "hai",
+    "howdy",
+    "bonjour",
+    "hey",
+    "hewwo",
+    "hello",
+    "whats up"
+  ],
+  "my_greeting": [
+    "hello",
+    "hi",
+    "hey"
+  ],
+  "farewell": [
+    "goodbye",
+    "good bye",
+    "good night",
+    "adios",
+    "farewell",
+    "bye"
+  ],
+  "my_farewell": [
+    "bye",
+    "goodbye"
+  ],
+  "hyping": [
+    "pog",
+    "hype",
+    "litty",
+    "let's go"
+  ],
+  "command": [
+    "echo",
+    "remember",
+    "forget",
+    "learn",
+    "unlearn",
+    "what"
+  ]
+}
