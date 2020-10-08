@@ -130,7 +130,14 @@ client.on('connected', (address,port) => {
  * 
  * Allows the bot the chance to say goodbye
  */
-process.on('SIGINT', function() {
+process.on('SIGINT', signoff);
+
+/**
+ * Should catch a kill from top
+ */
+process.on('SIGTERM',signoff);
+
+function signoff() {
     console.log("\nLogging off");
 
     // If I try to log off before the data is loaded, it won't overwrite
@@ -139,7 +146,7 @@ process.on('SIGINT', function() {
     client.say(default_channel, 'Goodbye guys!');
 
     process.exit();
-});
+}
 
 function execute_command(cmd, message, sMessage, admin) {
     switch(cmd) {
@@ -192,7 +199,10 @@ function execute_command(cmd, message, sMessage, admin) {
             if (memory[sMessage[2]])
                 return sMessage[2] +" "+ memory[sMessage[2]];
             return;
-
+	
+	case "signoff":
+	    if (admin) signoff();
+	    return;
         default:
             console.log("Command is not currently supported");
             return "Command is not currently supported";
