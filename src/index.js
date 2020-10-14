@@ -167,10 +167,12 @@ function execute_command(cmd, message, sMessage, admin) {
 				return "Access denied";
 			}
 			// check if already known phrase
-			if (db[sMessage[1]].includes(phrase))
+			if (db[sMessage[1]] && db[sMessage[1]].includes(phrase))
 				return "I already know that one!";
+			
+			if (db[sMessage[1]]) db[sMessage[1]].push(phrase);
+			else return `What's a ${sMessage[1]}?`;
 
-			db[sMessage[1]].push(phrase);
 			return `Learned ${phrase} is a ${sMessage[1]}`;
 
 		case "unlearn":
