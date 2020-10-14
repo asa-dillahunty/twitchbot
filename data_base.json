@@ -1,13 +1,9 @@
 {
   "greeting": [
     "hi",
-    "hai",
-    "howdy",
     "bonjour",
     "hey",
-    "hewwo",
-    "hello",
-    "whats up"
+    "hello"
   ],
   "my_greeting": [
     "hello",
@@ -18,7 +14,6 @@
     "goodbye",
     "good bye",
     "good night",
-    "adios",
     "farewell",
     "bye"
   ],
@@ -26,18 +21,13 @@
     "bye",
     "goodbye"
   ],
-  "hyping": [
-    "pog",
-    "hype",
-    "litty",
-    "let's go"
-  ],
   "command": [
     "echo",
     "remember",
     "forget",
     "learn",
     "unlearn",
-    "what"
+    "what",
+    "signoff"
   ]
 }

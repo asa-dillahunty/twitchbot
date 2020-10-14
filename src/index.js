@@ -3,7 +3,11 @@ const fs = require('fs');
 const _ = require("lodash");
 require('dotenv').config();
 
-const DATA_BASE = "data_base.json";
+// sets the default database
+var DATA_BASE = "data_base.json";
+// uses custom data base
+if (fs.existsSync("database.json")) DATA_BASE = "database.json";
+
 var db = null;
 var memory = {};
 
@@ -99,8 +103,8 @@ client.on('message', (channel, tags, message, self) => {
 	
 	// This turns message lowercase, removes all non-alphanumeric characters, then removes repeated spaces
 	lMessage = message.toLowerCase()
-		.replace(/[^\w\s]|_/g, "")
-		.replace(/\s+/g, " ");
+		// .replace(/[^\w\s]|_/g, "") // this removes all non-alphanumeric characters
+		.replace(/\s+/g, " "); // trims white space
 		
 	// console.log(lMessage);
 	if (db.greeting.includes(lMessage)) {
@@ -127,7 +131,7 @@ client.on('message', (channel, tags, message, self) => {
  * When connection is established, announce my presence
  */
 client.on('connected', (address,port) => {
-	client.say(default_channel, 'Hey chat! Sambotmonk is now connected');
+	client.say(default_channel, `Hey chat! ${process.USERNAME} is now connected`);
 });
 
 

@@ -4,3 +4,4 @@ database.json
 .DS*
 ._*
 *.log
+.pid_log
