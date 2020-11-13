@@ -1,0 +1,36 @@
+{
+  "hello": {
+    "type": "response",
+    "responses": [
+      "Hey!",
+      "Hello!",
+      "Ew"
+    ]
+  },
+  "hi": {
+    "type": "link",
+    "anchor": "hello"
+  },
+  "hewwo": {
+    "type": "link",
+    "anchor": "hello"
+  },
+  "hey": {
+    "type": "link",
+    "anchor": "hello"
+  },
+  "howdy": {
+    "type": "link",
+    "anchor": "hello"
+  },
+  "echo": {
+    "type": "command"
+  },
+  "remember": {
+    "type": "command"
+  },
+  "signoff": {
+    "type": "command",
+    "protected":"true"
+  }
+}

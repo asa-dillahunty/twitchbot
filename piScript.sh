@@ -1,5 +1,7 @@
 # get the pid of the last time node was run
 pid_file=".pid_log"
+log_file="gitpull.log"
+twitch_log="twitchChat.log"
 last_pid=1
 if test -f "$pid_file"; then
     last_pid=$(<"$pid_file")
@@ -13,12 +15,7 @@ if [ "$(ps -p $last_pid -o comm=)" = "node" ]; then
     fi
 fi
 
-node . &
-last_pid=$!
-echo "$last_pid" > "$pid_file"
-
 echo "Starting pi script"
-log_file="gitpull.log"
 
 echo "---------------------------" >> $log_file
 
@@ -28,3 +25,8 @@ date "+%Y-%m-%d %T" >> $log_file
 echo "---------------------------" >> $log_file
 git pull >> $log_file
 echo "" >> $log_file
+
+# maybe update files BEFORE starting lol
+node . > $twitch_log &
+last_pid=$!
+echo "$last_pid" > "$pid_file"
